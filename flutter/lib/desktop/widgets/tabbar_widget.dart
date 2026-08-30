@@ -775,7 +775,7 @@ class WindowActionPanelState extends State<WindowActionPanel> {
                   icon: IconFont.min,
                   onTap: () {
                     if (widget.isMainWindow) {
-                      windowManager.minimize();
+                      windowManager.hide();
                     } else {
                       WindowController.fromWindowId(kWindowId!).minimize();
                     }
@@ -806,7 +806,7 @@ class WindowActionPanelState extends State<WindowActionPanel> {
                       // note: the main window can be restored by tray icon
                       Future.delayed(Duration.zero, () async {
                         if (widget.isMainWindow) {
-                          await windowManager.close();
+                          await windowManager.hide();
                         } else {
                           await WindowController.fromWindowId(kWindowId!)
                               .close();
