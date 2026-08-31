@@ -1437,14 +1437,14 @@ jobs:
               deb_arch: amd64,
               vcpkg-triplet: x64-linux,
             }
-          - {
-              arch: aarch64,
-              target: aarch64-unknown-linux-gnu,
-              distro: ubuntu18.04,
-              on: ubuntu-22.04-arm,
-              deb_arch: arm64,
-              vcpkg-triplet: arm64-linux,
-            }
+          # - {
+          #     arch: aarch64,
+          #     target: aarch64-unknown-linux-gnu,
+          #     distro: ubuntu18.04,
+          #     on: ubuntu-22.04-arm,
+          #     deb_arch: arm64,
+          #     vcpkg-triplet: arm64-linux,
+          #   }
     steps:
       - name: Export GitHub Actions cache environment variables
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
@@ -2261,7 +2261,7 @@ jobs:
       matrix:
         job:
           - { target: x86_64-unknown-linux-gnu, arch: x86_64 }
-          - { target: aarch64-unknown-linux-gnu, arch: aarch64 }
+          # - { target: aarch64-unknown-linux-gnu, arch: aarch64 }
     steps:
       - name: Checkout source code
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -2328,14 +2328,14 @@ jobs:
               arch: x86_64,
               suffix: "-sciter",
             }
-          - {
-              target: aarch64-unknown-linux-gnu,
-              # try out newer flatpak since error of "error: Nothing matches org.freedesktop.Platform in remote flathub"
-              distro: ubuntu22.04,
-              on: ubuntu-22.04-arm,
-              arch: aarch64,
-              suffix: "",
-            }
+          # - {
+          #     target: aarch64-unknown-linux-gnu,
+          #     # try out newer flatpak since error of "error: Nothing matches org.freedesktop.Platform in remote flathub"
+          #     distro: ubuntu22.04,
+          #     on: ubuntu-22.04-arm,
+          #     arch: aarch64,
+          #     suffix: "",
+          #   }
     steps:
       - name: Checkout source code
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
